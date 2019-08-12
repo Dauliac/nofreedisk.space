@@ -5,6 +5,8 @@ baseurl = "/"
 theme = "hello-friend-ng"
 publishDir = "docs"
 
+DefaultContentLanguage = "en"
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
@@ -24,13 +26,13 @@ publishDir = "docs"
 [languages]
   [languages.en]
     title = "Nofreedisk.Space blog"
-    subtitle = "a student blog"
+    subtitle = "just a dev blog"
     keywords = ""
     copyright = ""
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "a student blog from Bordeaux"
+      logoText = "just a dev blog from Bordeaux"
       logoHomeLink = "/"
     # or
     #
@@ -47,6 +49,32 @@ publishDir = "docs"
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"
+  [languages.fr]
+    title = "Nofreedisk.Space blog"
+    subtitle = "Juste un blog de dev."
+    keywords = ""
+    copyright = ""
+    readOtherPosts = "lire les autres posts"
+
+    [languages.fr.params.logo]
+      logoText = "juste un blog de dev bordelais"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+	# You can create a language based menu
+    [languages.fr.menu]
+      [[languages.fr.menu.main]]
+        identifier = "à propos"
+        name = "À propos"
+        url = "/about"
+      [[languages.fr.menu.main]]
+        identifier = "aperçu"
+        name = "Aperçu"
+        url = "/showcase"
+
 
 # And you can even create generic menu
 [menu]
