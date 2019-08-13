@@ -18,21 +18,6 @@
   </url>
   
   <url>
-    <loc>https://nofreedisk.space/fr/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nofreedisk.space/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://nofreedisk.space/fr/"
-                />
-  </url>
-  
-  <url>
     <loc>https://nofreedisk.space/fr/tags/</loc>
     <priority>0</priority>
     <xhtml:link
@@ -44,6 +29,21 @@
                 rel="alternate"
                 hreflang="fr"
                 href="https://nofreedisk.space/fr/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/fr/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nofreedisk.space/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://nofreedisk.space/fr/"
                 />
   </url>
   

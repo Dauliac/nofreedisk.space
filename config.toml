@@ -1,11 +1,36 @@
+# DOC: https://github.com/rhazdon/hugo-theme-hello-friend-ng
+#      https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/master/exampleSite/config.toml
+
 baseURL = "https://nofreedisk.space/"
 languageCode = "en-us"
-title = "IT Bordeaux blog"
+title = "nofreedisk.space"
 baseurl = "/"
 theme = "hello-friend-ng"
-publishDir = "docs"
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "docs"
 
 DefaultContentLanguage = "en"
+
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+
+rssLimit  = 20  # Maximum number of items in the RSS feed.
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+[author]
+  name = "dauliac"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -17,72 +42,40 @@ DefaultContentLanguage = "en"
   description = "Homepage and blog by dauliac"
   keywords = "homepage, blog, science, informatics, development, programming, cloud, cicd, docker, francais"
   images = [""]
+  homeSubtitle = "by dauliac"
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
   # Default theme "light" or "dark"
   defaultTheme = "dark"
 
+  [[params.social]]
+    name = "email"
+    url  = "mailto:dauliac@protonmail.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/dauliac"
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/julien-dauliac-26a577135/"
+
 [languages]
   [languages.en]
-    title = "Nofreedisk.Space blog"
-    subtitle = "just a dev's blog"
-    keywords = ""
-    copyright = ""
-    readOtherPosts = "Read other posts"
+    subtitle  = "Just an IT blog"
+    weight    = 1
 
-    [languages.en.params.logo]
-      logoText = "just a dev's blog from Bordeaux"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
-
-	# You can create a language based menu
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about"
-      [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
   [languages.fr]
-    title = "Nofreedisk.Space blog"
-    subtitle = "Juste un blog de dev."
-    keywords = ""
-    copyright = ""
-    readOtherPosts = "lire les autres posts"
-
-    [languages.fr.params.logo]
-      logoText = "juste un blog de dev bordelais"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
-
-	# You can create a language based menu
-    [languages.fr.menu]
-      [[languages.fr.menu.main]]
-        identifier = "à propos"
-        name = "À propos"
-        url = "/about"
-      [[languages.fr.menu.main]]
-        identifier = "aperçu"
-        name = "Aperçu"
-        url = "/showcase"
-
+    subtitle  = "Juste un blog d'IT"
+    weight    = 2
 
 # And you can even create generic menu
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about"
-  [[menu.main]]
-    identifier = "blog"
+    identifier = "posts"
     name       = "Blog"
     url        = "/posts"
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "about/"

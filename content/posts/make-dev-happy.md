@@ -2,6 +2,9 @@
 title: "Make dev happy"
 date: 2019-08-12T18:49:49+02:00
 draft: false
+author:
+  name: dauliac
+
 ---
 
 Les `Makefiles` si vous avez déjà codé en [`c`](https://fr.wikipedia.org/wiki/C_(langage)) cet outil a du autant vous prendre la tête que vous apporter de l'aide.
@@ -33,7 +36,8 @@ On peut également reproduire cette nomenclature sur tous nos projets et ça c'e
 
 Les Makefile vont donc permettre tout cela et ce sans débourser le moindre centime (Manquerai plus que ça).
 
-![The mask money](/img/meme/money_the_mask.gif)
+<!-- ![The mask money](/img/meme/money_the_mask.gif) -->
+{{< image src="/img/meme/money_the_mask.gif" alt="money the mask" position="center" style="width: 30em;" >}}
 
 La structure d'un `Makefile` et le système de `targets` est exactement approprié à ces problématiques.
 Une `target` une action. Les actions peuvent en impliquer d'autres les targets aussi...
@@ -204,7 +208,7 @@ up:
   $(MAKE) configure
 ```
 
-<!-- ![No brain fractale](img/meme/fractale_no_brain.gif) -->
+{{< image src="/img/meme/fractale_no_brain.gif" alt="No brain fractal" position="left" style="width: 30em;" >}}
 
 
 ### Le `make help`:
@@ -258,8 +262,8 @@ init:  ## Install utils from requirements.txt
 
 ---
 
-Je pense vous avoir bien chargé en doc et vais donc m'arrêter ici :).
+Je pense vous avoir bien chargé en doc et vais donc m'arrêter ici.
 
-Je vous invite fortement à utiliser/améliorer vos `Makefiles`. Ils apportent une stabilité dans l'usage sur vos projets et vos développeurs vous en remercieront :)
+Je vous invite fortement à utiliser/améliorer vos `Makefiles`. Ils apportent une stabilité dans l'usage sur vos projets et vos développeurs vous en remercieront 🙂.
 
-![vous êtes les meilleurs](/img/meme/vous_etes_les_meilleurs_asdlf.gif)
+{{< image src="/img/meme/vous_etes_les_meilleurs_asdlf.gif" alt="Vous etes les meilleurs." position="center" style="width: 35em;" >}}

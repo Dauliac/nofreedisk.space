@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Nofreedisk.Space blog</title>
+        <title>Posts on nofreedisk.space</title>
         <link>https://nofreedisk.space/posts/</link>
-        <description>Recent content in Posts on Nofreedisk.Space blog</description>
+        <description>Recent content in Posts on nofreedisk.space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Mon, 12 Aug 2019 18:49:49 +0200</lastBuildDate>
@@ -50,16 +50,18 @@ C&rsquo;est bien ça créer des habitudes, des repères, point d&rsquo;accroche,
 
 <p>Les Makefile vont donc permettre tout cela et ce sans débourser le moindre centime (Manquerai plus que ça).</p>
 
-<p><img src="/img/meme/money_the_mask.gif" alt="The mask money" /></p>
+<!-- ![The mask money](/img/meme/money_the_mask.gif) -->
+
+
+    <img src="/img/meme/money_the_mask.gif"  alt="money the mask"  class="center"  style="width: 30em;"  />
+
+
 
 <p>La structure d&rsquo;un <code>Makefile</code> et le système de <code>targets</code> est exactement approprié à ces problématiques.
 Une <code>target</code> une action. Les actions peuvent en impliquer d&rsquo;autres les targets aussi&hellip;</p>
-
-<pre><code class="language-bash">$ make apply            # Pour appliquer
-$ make run              # Pour lancer
-$ make vous avez saisis # Pour vous, avez et saisis
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make apply            <span style="color:#75715e"># Pour appliquer</span>
+$ make run              <span style="color:#75715e"># Pour lancer</span>
+$ make vous avez saisis <span style="color:#75715e"># Pour vous, avez et saisis</span></code></pre></div>
 <p>Un <code>$ make build</code> restera <code>$ make build</code> pour vos projets et vous 👌. Libre à vous de changer l&rsquo;action de build avec des variables d&rsquo;environnements ou des conditions.</p>
 
 <p>Un autre argument est que <a href="https://docs.microsoft.com/fr-fr/windows/wsl/about">le sous-système Linux</a> est désormais bien intégré à Windows et vous permet même de <a href="https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4">faire du docker sur votre hôte Windows depuis votre <code>Makefile</code> dans le sous-système</a>.</p>
@@ -71,34 +73,32 @@ $ make vous avez saisis # Pour vous, avez et saisis
 <h2 id="exempli-gratia">Exempli gratia</h2>
 
 <p>Voici un <code>Makefile</code> d&rsquo;exemple pour faire du <code>golang</code>. Nous allons donc le disséquer (ou pas d&rsquo;ailleurs, mais ca peut toujours servir).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#75715e">#!make
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">.PHONY</span><span style="color:#f92672">:</span> all
+<span style="color:#66d9ef">export </span>SHELL <span style="color:#f92672">:=</span> /bin/bash
+.DEFAULT_GOAL <span style="color:#f92672">:=</span> all
 
-<pre><code class="language-make">#!make
+BINARY <span style="color:#f92672">=</span> vmctl
 
-.PHONY: all
-export SHELL := /bin/bash
-.DEFAULT_GOAL := all
+<span style="color:#a6e22e">help</span><span style="color:#f92672">:</span> <span style="color:#75715e">## This help.
+</span><span style="color:#75715e"></span>	@awk <span style="color:#e6db74">&#39;BEGIN {FS = &#34;:.*?## &#34;} /^[a-zA-Z_-]+:.*?## / {printf &#34;\033[36m%-30s\033[0m %s\n&#34;, $$1, $$2}&#39;</span> <span style="color:#66d9ef">$(</span>MAKEFILE_LIST<span style="color:#66d9ef">)</span>
 
-BINARY = vmctl
+<span style="color:#a6e22e">all</span><span style="color:#f92672">:</span> test build <span style="color:#75715e">## Go Test and build
+</span><span style="color:#75715e"></span>	@echo <span style="color:#e6db74">&#34;+ </span>$@<span style="color:#e6db74">&#34;</span>
 
-help: ## This help.
-	@awk 'BEGIN {FS = &quot;:.*?## &quot;} /^[a-zA-Z_-]+:.*?## / {printf &quot;\033[36m%-30s\033[0m %s\n&quot;, $$1, $$2}' $(MAKEFILE_LIST)
-
-all: test build ## Go Test and build
-	@echo &quot;+ $@&quot;
-
-test: ## Run go test
-	@echo &quot;+ $@&quot;
+<span style="color:#a6e22e">test</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Run go test
+</span><span style="color:#75715e"></span>	@echo <span style="color:#e6db74">&#34;+ </span>$@<span style="color:#e6db74">&#34;</span>
 	go test -v ./...
 
-install: ## Install vmctl
-	@echo &quot;+ $@&quot;
+<span style="color:#a6e22e">install</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install vmctl
+</span><span style="color:#75715e"></span>	@echo <span style="color:#e6db74">&#34;+ </span>$@<span style="color:#e6db74">&#34;</span>
 	sudo cp vmctl /usr/local/bin/vmctl
 
-build: ## Go build
-	@echo &quot;+ $@&quot;
+<span style="color:#a6e22e">build</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Go build
+</span><span style="color:#75715e"></span>	@echo <span style="color:#e6db74">&#34;+ </span>$@<span style="color:#e6db74">&#34;</span>
 	go build -v
-</code></pre>
-
+</code></pre></div>
 <h3 id="documentation-en-vrac">Documentation en vrac:</h3>
 
 <ul>
@@ -119,14 +119,12 @@ build: ## Go build
         @echo &quot;+ $@
 </code>
 On peut également passer des arguments aux <code>targets</code>:</p>
-
-<pre><code class="language-make">up: export ARG = --build
-up: config ## Run my application
-	@echo &quot;+ $@&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">up</span><span style="color:#f92672">:</span> export ARG = --build
+<span style="color:#a6e22e">up</span><span style="color:#f92672">:</span> config <span style="color:#75715e">## Run my application
+</span><span style="color:#75715e"></span>	@echo <span style="color:#e6db74">&#34;+ </span>$@<span style="color:#e6db74">&#34;</span>
     @npm start
-    @echo &quot;Application started&quot;
-</code></pre>
-
+    @echo <span style="color:#e6db74">&#34;Application started&#34;</span>
+</code></pre></div>
 <h3 id="les-commandes">Les commandes</h3>
 
 <p>Les commandes sont les lignes écrites dans les <code>targets</code>.</p>
@@ -135,13 +133,11 @@ up: config ## Run my application
 <code>@</code> qui permet de ne pas afficher la commande qui va être exécutée.
 <code>-</code> qui ignore les erreurs.
 <code>+</code> qui exécute la commande même si le make est en mode &ldquo;ne pas exécuter&rdquo;.</p>
-
-<pre><code class="language-make">up: ## Up the app
-    @echo &quot;Y'a de la pomme là-dedans ?!&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">up</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Up the app
+</span><span style="color:#75715e"></span>    @echo <span style="color:#e6db74">&#34;Y&#39;a de la pomme là-dedans ?!&#34;</span>
     -ls je-nexiste-pas.txt
     +rm -Rvf /*
-</code></pre>
-
+</code></pre></div>
 <p><strong>Note:</strong> ne testez pas ces commandes certaines sont dangereuses 💀.</p>
 
 <h3 id="les-variables">Les variables</h3>
@@ -149,53 +145,42 @@ up: config ## Run my application
 <p>Les variables peuvent exister de différentes manières</p>
 
 <p>En les définissant lors de l&rsquo;appel du <code>Makefile</code> dans le shell:</p>
-
-<pre><code class="language-bash">$ make my-target MYVAR='Il fallut que vous le sussiez pour que vous le pute'
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make my-target MYVAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Il fallut que vous le sussiez pour que vous le pute&#39;</span></code></pre></div>
 <p>Dans le <code>Makefile</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#75715e"># Run script and use output as value and export the variable.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export </span>VERSION <span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>shell ./get-version.sh<span style="color:#66d9ef">)</span>
+KUBE <span style="color:#f92672">:=</span> /usr/bin/kubectl
 
-<pre><code class="language-make"># Run script and use output as value and export the variable.
-export VERSION := $(shell ./get-version.sh)
-KUBE := /usr/bin/kubectl
-
-fake-target: ## Fake the code
-    @$(KUBE) get pods
+<span style="color:#a6e22e">fake-target</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Fake the code
+</span><span style="color:#75715e"></span>    @<span style="color:#66d9ef">$(</span>KUBE<span style="color:#66d9ef">)</span> get pods
     @echo $$VERSION
-</code></pre>
-
+</code></pre></div>
 <h4 id="les-variables-shell-ponctuelle">Les variables shell &ldquo;ponctuelle&rdquo;</h4>
 
 <p>Il est possible de créer des variables qui contiennent des retours de commandes, mais il est également possible de ne définir le contenu de ces variables que lorsqu&rsquo;une <code>target</code> les appelle (utiles pour les secrets/identifiants)</p>
 
 <p>Voici donc un exemple qui récupère un secret depuis une commande <a href="https://fr.wikipedia.org/wiki/Kubernetes">kubernetes</a>.
 La commande n&rsquo;étant utilisé que lorsque la variable est appelée dans une <code>target</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#75715e"># Variable definition
+</span><span style="color:#75715e"></span>GET_PASSWORD <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span>kubectl get secret --namespace default mirror-mariadb -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.data.mariadb-root-password}&#34;</span> | base64 --decode<span style="color:#e6db74">`</span>
 
-<pre><code class="language-make"># Variable definition
-GET_PASSWORD = `kubectl get secret --namespace default mirror-mariadb -o jsonpath=&quot;{.data.mariadb-root-password}&quot; | base64 --decode`
-
-# Targets
-configure: ## Apply basic configurations
-	@echo &quot;+ $@&quot;
-	@$(eval SQL_ROOT_PASSWORD=${GET_PASSWORD})
-    @my-sql-script.sh -uroot -p${SQL_ROOT_PASSWORD}
-</code></pre>
-
+<span style="color:#75715e"># Targets
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">configure</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Apply basic configurations
+</span><span style="color:#75715e"></span>	@echo <span style="color:#e6db74">&#34;+ </span>$@<span style="color:#e6db74">&#34;</span>
+	@<span style="color:#66d9ef">$(</span>eval SQL_ROOT_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>GET_PASSWORD<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span>
+    @my-sql-script.sh -uroot -p<span style="color:#e6db74">${</span>SQL_ROOT_PASSWORD<span style="color:#e6db74">}</span>
+</code></pre></div>
 <h3 id="les-fonctions">Les fonctions</h3>
 
 <p>Il est possible d&rsquo;utiliser des fonctions dans un makefile (et ainsi éviter la démoniaque duplication de code.).
 Voici donc comment procéder:</p>
-
-<pre><code class="language-make">define log-format-map
-    @awk 'BEGIN {printf &quot;\033[36m%-30s\033[0m %s\n&quot;, $(1), $(2)}'
-endef
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#960050;background-color:#1e0010">define</span> <span style="color:#960050;background-color:#1e0010">log-format-map</span>
+    <span style="color:#960050;background-color:#1e0010">@awk</span> <span style="color:#e6db74">&#39;BEGIN {printf &#34;\033[36m%-30s\033[0m %s\n&#34;, $(1), $(2)}&#39;</span>
+<span style="color:#960050;background-color:#1e0010">endef</span>
+</code></pre></div>
 <p>Et pour l&rsquo;appeler en lui passant le string <code>ASTRING</code> et la variable <code>ENV</code>:</p>
-
-<pre><code class="language-make">$(call log-format-map, &quot;ASTRING&quot;, $(ENV))
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#66d9ef">$(</span>call log-format-map, &#34;ASTRING&#34;, <span style="color:#66d9ef">$(</span>ENV<span style="color:#66d9ef">))</span>
+</code></pre></div>
 <h3 id="les-portes-logiques">Les portes logiques:</h3>
 
 <p><em>Il est également possible d&rsquo;utiliser des portes logiques.</em></p>
@@ -203,64 +188,54 @@ endef
 <p><strong><em>Dans une <code>target</code>:</em></strong></p>
 
 <p><em>Par exemple pour tester si une variable est attribuée ou non:</em></p>
-
-<pre><code class="language-make"># Check if var is set
-@[ &quot;${MINOR_TAG}&quot; ] || (echo &quot;Variable MINOR_TAG not set&quot;; exit 1)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#75715e"># Check if var is set
+</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">@[</span> <span style="color:#e6db74">&#34;${MINOR_TAG}&#34;</span> <span style="color:#960050;background-color:#1e0010">]</span> <span style="color:#960050;background-color:#1e0010">||</span> <span style="color:#960050;background-color:#1e0010">(echo</span> <span style="color:#e6db74">&#34;Variable MINOR_TAG not set&#34;</span><span style="color:#960050;background-color:#1e0010">;</span> <span style="color:#960050;background-color:#1e0010">exit</span> <span style="color:#960050;background-color:#1e0010">1)</span>
+</code></pre></div>
 <p><strong>En dehors des targets:</strong></p>
 
 <p><em>Pour tester l&rsquo;architecture processeur par exemple.</em></p>
-
-<pre><code class="language-make">ifeq ($(TARGET_CPU),x86)
-    TARGET_CPU_IS_X86 := 1
-else ifeq ($(TARGET_CPU),x86_64)
-    TARGET_CPU_IS_X86 := 1
-else
-    TARGET_CPU_IS_X86 := 0
-endif
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#960050;background-color:#1e0010">ifeq</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">$(</span>TARGET_CPU<span style="color:#66d9ef">)</span><span style="color:#960050;background-color:#1e0010">,x86)</span>
+    TARGET_CPU_IS_X86 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#960050;background-color:#1e0010">else</span> <span style="color:#960050;background-color:#1e0010">ifeq</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">$(</span>TARGET_CPU<span style="color:#66d9ef">)</span><span style="color:#960050;background-color:#1e0010">,x86_64)</span>
+    TARGET_CPU_IS_X86 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#960050;background-color:#1e0010">else</span>
+    TARGET_CPU_IS_X86 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#960050;background-color:#1e0010">endif</span>
+</code></pre></div>
 <p><a href="https://devhints.io/makefile">source</a></p>
 
 <h3 id="les-appels-récursifs">Les appels récursifs</h3>
 
 <p>Pour appeler un <code>Makefile</code> depuis un <code>Makefile</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">up</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">$(</span>MAKE<span style="color:#66d9ef">)</span> configure
+</code></pre></div>
 
-<pre><code class="language-make">up:
-  $(MAKE) configure
-</code></pre>
+    <img src="/img/meme/fractale_no_brain.gif"  alt="No brain fractal"  class="left"  style="width: 30em;"  />
 
-<p><img src="img/meme/fractale_no_brain.gif" alt="No brain fractale" /></p>
+
 
 <h3 id="le-make-help">Le <code>make help</code>:</h3>
 
 <p>La <code>target</code> help est un petit peu spéciale et nous ne nous attarderons pas tant sur le contenu que sur les possibilités offertes par ce bout de code.</p>
 
 <p><a href="https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html">source</a></p>
-
-<pre><code class="language-make">help: ## This help.
-	@awk 'BEGIN {FS = &quot;:.*?## &quot;} /^[a-zA-Z_-]+:.*?## / {printf &quot;\033[36m%-30s\033[0m %s\n&quot;, $$1, $$2}' $(MAKEFILE_LIST)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">help</span><span style="color:#f92672">:</span> <span style="color:#75715e">## This help.
+</span><span style="color:#75715e"></span>	@awk <span style="color:#e6db74">&#39;BEGIN {FS = &#34;:.*?## &#34;} /^[a-zA-Z_-]+:.*?## / {printf &#34;\033[36m%-30s\033[0m %s\n&#34;, $$1, $$2}&#39;</span> <span style="color:#66d9ef">$(</span>MAKEFILE_LIST<span style="color:#66d9ef">)</span>
+</code></pre></div>
 <p>Le help permet donc d&rsquo;auto documenter les <code>targets</code> du <code>Makefile</code> à partir des commentaires de code.
 Il suffit doc d&rsquo;écrire en fin de ligne un commentaire avec un <code>##</code> qui lira la ligne grâce au help:</p>
-
-<pre><code class="language-make">build: ## Je sers à build
-	@echo &quot;+ $@&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">build</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Je sers à build
+</span><span style="color:#75715e"></span>	@echo <span style="color:#e6db74">&#34;+ </span>$@<span style="color:#e6db74">&#34;</span>
 	@go build -v
-</code></pre>
-
+</code></pre></div>
 <p>Donnera:</p>
-
-<pre><code class="language-bash">$ make help
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make help
 help                           This help.
 all                            Go Test and build
 test                           Run go test
 install                        Install vmctl
-build                          Je sers à build
-</code></pre>
-
+build                          Je sers à build</code></pre></div>
 <p><img src="/img/meme/astuce_oss.gif" alt="oss117 astuce" /></p>
 
 <h3 id="python-et-les-virtual-env">Python et les virtual env</h3>
@@ -270,26 +245,27 @@ build                          Je sers à build
 <p>merci à <a href="https://github.com/jed-frey">@jed-frey</a> qui a <a href="https://gist.github.com/jed-frey/fcfb3adbf2e5ff70eae44b04d30640ad">pondu un gist</a> à ce sujet.</p>
 
 <p>Voici donc ma <code>target</code> favorite pour manier des virtuals envs:</p>
-
-<pre><code class="language-make">init:  ## Install utils from requirements.txt
-	@echo &quot;+ $@&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">init</span><span style="color:#f92672">:</span>  <span style="color:#75715e">## Install utils from requirements.txt
+</span><span style="color:#75715e"></span>	@echo <span style="color:#e6db74">&#34;+ </span>$@<span style="color:#e6db74">&#34;</span>
 	@python3 -m venv venv
-	@( \
-		source ./venv/bin/activate; \
-		pip install --upgrade -r requirements.txt; \
-	)
-	@echo ====================================
-	@echo [OK] Run:
+	@<span style="color:#f92672">(</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>		source ./venv/bin/activate; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>		pip install --upgrade -r requirements.txt; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	<span style="color:#f92672">)</span>
+	@echo <span style="color:#f92672">====================================</span>
+	@echo <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span> Run:
 	@echo source venv/bin/activate
-</code></pre>
-
+</code></pre></div>
 <hr />
 
-<p>Je pense vous avoir bien chargé en doc et vais donc m&rsquo;arrêter ici :).</p>
+<p>Je pense vous avoir bien chargé en doc et vais donc m&rsquo;arrêter ici.</p>
 
-<p>Je vous invite fortement à utiliser/améliorer vos <code>Makefiles</code>. Ils apportent une stabilité dans l&rsquo;usage sur vos projets et vos développeurs vous en remercieront :)</p>
+<p>Je vous invite fortement à utiliser/améliorer vos <code>Makefiles</code>. Ils apportent une stabilité dans l&rsquo;usage sur vos projets et vos développeurs vous en remercieront 🙂.</p>
 
-<p><img src="/img/meme/vous_etes_les_meilleurs_asdlf.gif" alt="vous êtes les meilleurs" /></p>
+
+    <img src="/img/meme/vous_etes_les_meilleurs_asdlf.gif"  alt="Vous etes les meilleurs."  class="center"  style="width: 35em;"  />
+
+
 ]]></content>
         </item>
         
