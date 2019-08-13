@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://nofreedisk.space/fr/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nofreedisk.space/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://nofreedisk.space/fr/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/fr/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nofreedisk.space/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://nofreedisk.space/fr/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/fr/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nofreedisk.space/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://nofreedisk.space/fr/tags/"
+                />
+  </url>
+  
+</urlset>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="">
+<meta name="description"
+    content="Les Makefiles si vous avez déjà codé en c cet outil a du autant vous prendre la tête que vous apporter de l&amp;rsquo;aide.
+Pour ceux qui ne connaissent pas:
+ Make est un logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d&amp;rsquo;éléments de base tels que du code source. Dans notre cas c&amp;rsquo;est les pseudos flags (les targets) qui vont nous intéresser. L&amp;rsquo;appel des targets se faisant très facilement:" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://nofreedisk.space/posts/make-dev-happy/" />
+
+
+<title>
+    
+    Make dev happy :: Nofreedisk.Space blog  — just a dev&#39;s blog
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="Make dev happy">
+<meta itemprop="description" content="Les Makefiles si vous avez déjà codé en c cet outil a du autant vous prendre la tête que vous apporter de l&rsquo;aide.
+Pour ceux qui ne connaissent pas:
+ Make est un logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d&rsquo;éléments de base tels que du code source. Dans notre cas c&rsquo;est les pseudos flags (les targets) qui vont nous intéresser. L&rsquo;appel des targets se faisant très facilement:">
+
+
+<meta itemprop="datePublished" content="2019-08-12T18:49:49&#43;02:00" />
+<meta itemprop="dateModified" content="2019-08-12T18:49:49&#43;02:00" />
+<meta itemprop="wordCount" content="1252">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nofreedisk.space/"/>
+
+<meta name="twitter:title" content="Make dev happy"/>
+<meta name="twitter:description" content="Les Makefiles si vous avez déjà codé en c cet outil a du autant vous prendre la tête que vous apporter de l&rsquo;aide.
+Pour ceux qui ne connaissent pas:
+ Make est un logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d&rsquo;éléments de base tels que du code source. Dans notre cas c&rsquo;est les pseudos flags (les targets) qui vont nous intéresser. L&rsquo;appel des targets se faisant très facilement:"/>
+
+
+
+
+<meta property="article:published_time" content="2019-08-12 18:49:49 &#43;0200 CEST" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">just a dev&#39;s blog from Bordeaux</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://nofreedisk.space/about">About</a></li><li><a href="https://nofreedisk.space/showcase">Showcase</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>6 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title"><a href="https://nofreedisk.space/posts/make-dev-happy/">Make dev happy</a></h1>
+
+            
+
+            <div class="post-content">
+                
+
+<p>Les <code>Makefiles</code> si vous avez déjà codé en <a href="https://fr.wikipedia.org/wiki/C_(langage)"><code>c</code></a> cet outil a du autant vous prendre la tête que vous apporter de l&rsquo;aide.</p>
+
+<p>Pour ceux qui ne connaissent pas:</p>
+
+<blockquote>
+<p>Make est un logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d&rsquo;éléments de base tels que du code source.
+Dans notre cas c&rsquo;est les pseudos flags (les targets) qui vont nous intéresser.
+L&rsquo;appel des targets se faisant très facilement:</p>
+
+<p><a href="https://fr.wikipedia.org/wiki/Makefile">source Wikipédia</a></p>
+</blockquote>
+
+<p>info apéro: <em>le logiciel Makefile fut crée en 1977.</em></p>
+
+<p>Fort heureusement pour vous nous ne parlerons pas de cette utilisation.</p>
+
+<p>Ça c&rsquo;était pour l&rsquo;intro ni utile, ni nécessaire 🤔.</p>
+
+<hr />
+
+<h2 id="mise-en-situation">Mise en situation</h2>
+
+<p>Dans le cadre du développement d&rsquo;un projet il est facile de nommer/normer les actions redondantes (run, stop, clean). On peut même mettre des raccourcis dans son IDE ou se faire des scripts <code>bash</code> pour les plus barbus.
+C&rsquo;est bien ça créer des habitudes, des repères, point d&rsquo;accroche, <del>un foyer</del>.</p>
+
+<p>On peut également reproduire cette nomenclature sur tous nos projets et ça c&rsquo;est cool !</p>
+
+<p><strong>Note:</strong> La normalisation des actions reproductible permet également dans le cadre de pipelines de CI/CD d&rsquo;effectuer des actions et des changements de code sans changer tous les pipelines qui vont dépendre d&rsquo;un projet donné.</p>
+
+<p>Les Makefile vont donc permettre tout cela et ce sans débourser le moindre centime (Manquerai plus que ça).</p>
+
+<p><img src="/img/meme/money_the_mask.gif" alt="The mask money" /></p>
+
+<p>La structure d&rsquo;un <code>Makefile</code> et le système de <code>targets</code> est exactement approprié à ces problématiques.
+Une <code>target</code> une action. Les actions peuvent en impliquer d&rsquo;autres les targets aussi&hellip;</p>
+
+<pre><code class="language-bash">$ make apply            # Pour appliquer
+$ make run              # Pour lancer
+$ make vous avez saisis # Pour vous, avez et saisis
+</code></pre>
+
+<p>Un <code>$ make build</code> restera <code>$ make build</code> pour vos projets et vous 👌. Libre à vous de changer l&rsquo;action de build avec des variables d&rsquo;environnements ou des conditions.</p>
+
+<p>Un autre argument est que <a href="https://docs.microsoft.com/fr-fr/windows/wsl/about">le sous-système Linux</a> est désormais bien intégré à Windows et vous permet même de <a href="https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4">faire du docker sur votre hôte Windows depuis votre <code>Makefile</code> dans le sous-système</a>.</p>
+
+<p><strong>Votre outil est donc (en théorie) agnostique de l&rsquo;os et de la plateforme.</strong> Pas mal hein 🙂 ?</p>
+
+<hr />
+
+<h2 id="exempli-gratia">Exempli gratia</h2>
+
+<p>Voici un <code>Makefile</code> d&rsquo;exemple pour faire du <code>golang</code>. Nous allons donc le disséquer (ou pas d&rsquo;ailleurs, mais ca peut toujours servir).</p>
+
+<pre><code class="language-make">#!make
+
+.PHONY: all
+export SHELL := /bin/bash
+.DEFAULT_GOAL := all
+
+BINARY = vmctl
+
+help: ## This help.
+	@awk 'BEGIN {FS = &quot;:.*?## &quot;} /^[a-zA-Z_-]+:.*?## / {printf &quot;\033[36m%-30s\033[0m %s\n&quot;, $$1, $$2}' $(MAKEFILE_LIST)
+
+all: test build ## Go Test and build
+	@echo &quot;+ $@&quot;
+
+test: ## Run go test
+	@echo &quot;+ $@&quot;
+	go test -v ./...
+
+install: ## Install vmctl
+	@echo &quot;+ $@&quot;
+	sudo cp vmctl /usr/local/bin/vmctl
+
+build: ## Go build
+	@echo &quot;+ $@&quot;
+	go build -v
+</code></pre>
+
+<h3 id="documentation-en-vrac">Documentation en vrac:</h3>
+
+<ul>
+<li>Ajoutez toujours un <code>#!make</code>. Mettre un <a href="https://fr.wikipedia.org/wiki/Shebang">shebang</a> c&rsquo;est toujours une bonne pratique.</li>
+<li>Le <code>.PHONY:</code> permet de réécrire des commandes bash par des targets portant le même nom. Lui attribuer <code>all</code> apellera par défaut les <code>targets</code> à la place des commandes <code>bash</code></li>
+<li><code>export SHELL := /bin/bash</code> Permet d&rsquo;éviter des bugs de shells sur Mac Os et d&rsquo;utiliser <code>sh</code> à la place de <code>bash</code></li>
+<li><code>.DEFAULT_GOAL := all</code> est target appelé si aucun n&rsquo;est précisée: <code>$ make</code></li>
+<li>Executer <code>@echo &quot;+ $@&quot;</code> en première commande permet d&rsquo;afficher le nom de la <code>target</code> avant son exécution.</li>
+<li><code>export GPG_TTY := tty</code> Est une variable nécessaire pour utiliser les commandes <a href="https://fr.wikipedia.org/wiki/GNU_Privacy_Guard"><code>gpg</code></a> dans un <code>Makefile</code>.</li>
+<li><code>include myfile.env</code> Permet d&rsquo;inclure un fichier.</li>
+</ul>
+
+<h3 id="targets">Targets:</h3>
+
+<p>Il est possible de chainer des <code>targets</code> avec <code>target-name: target2 target3</code>:
+    <code>make
+    all: test build ## Go Test and build`
+        @echo &quot;+ $@
+</code>
+On peut également passer des arguments aux <code>targets</code>:</p>
+
+<pre><code class="language-make">up: export ARG = --build
+up: config ## Run my application
+	@echo &quot;+ $@&quot;
+    @npm start
+    @echo &quot;Application started&quot;
+</code></pre>
+
+<h3 id="les-commandes">Les commandes</h3>
+
+<p>Les commandes sont les lignes écrites dans les <code>targets</code>.</p>
+
+<p>Chaque commande peut avoir un préfixe:
+<code>@</code> qui permet de ne pas afficher la commande qui va être exécutée.
+<code>-</code> qui ignore les erreurs.
+<code>+</code> qui exécute la commande même si le make est en mode &ldquo;ne pas exécuter&rdquo;.</p>
+
+<pre><code class="language-make">up: ## Up the app
+    @echo &quot;Y'a de la pomme là-dedans ?!&quot;
+    -ls je-nexiste-pas.txt
+    +rm -Rvf /*
+</code></pre>
+
+<p><strong>Note:</strong> ne testez pas ces commandes certaines sont dangereuses 💀.</p>
+
+<h3 id="les-variables">Les variables</h3>
+
+<p>Les variables peuvent exister de différentes manières</p>
+
+<p>En les définissant lors de l&rsquo;appel du <code>Makefile</code> dans le shell:</p>
+
+<pre><code class="language-bash">$ make my-target MYVAR='Il fallut que vous le sussiez pour que vous le pute'
+</code></pre>
+
+<p>Dans le <code>Makefile</code> :</p>
+
+<pre><code class="language-make"># Run script and use output as value and export the variable.
+export VERSION := $(shell ./get-version.sh)
+KUBE := /usr/bin/kubectl
+
+fake-target: ## Fake the code
+    @$(KUBE) get pods
+    @echo $$VERSION
+</code></pre>
+
+<h4 id="les-variables-shell-ponctuelle">Les variables shell &ldquo;ponctuelle&rdquo;</h4>
+
+<p>Il est possible de créer des variables qui contiennent des retours de commandes, mais il est également possible de ne définir le contenu de ces variables que lorsqu&rsquo;une <code>target</code> les appelle (utiles pour les secrets/identifiants)</p>
+
+<p>Voici donc un exemple qui récupère un secret depuis une commande <a href="https://fr.wikipedia.org/wiki/Kubernetes">kubernetes</a>.
+La commande n&rsquo;étant utilisé que lorsque la variable est appelée dans une <code>target</code></p>
+
+<pre><code class="language-make"># Variable definition
+GET_PASSWORD = `kubectl get secret --namespace default mirror-mariadb -o jsonpath=&quot;{.data.mariadb-root-password}&quot; | base64 --decode`
+
+# Targets
+configure: ## Apply basic configurations
+	@echo &quot;+ $@&quot;
+	@$(eval SQL_ROOT_PASSWORD=${GET_PASSWORD})
+    @my-sql-script.sh -uroot -p${SQL_ROOT_PASSWORD}
+</code></pre>
+
+<h3 id="les-fonctions">Les fonctions</h3>
+
+<p>Il est possible d&rsquo;utiliser des fonctions dans un makefile (et ainsi éviter la démoniaque duplication de code.).
+Voici donc comment procéder:</p>
+
+<pre><code class="language-make">define log-format-map
+    @awk 'BEGIN {printf &quot;\033[36m%-30s\033[0m %s\n&quot;, $(1), $(2)}'
+endef
+</code></pre>
+
+<p>Et pour l&rsquo;appeler en lui passant le string <code>ASTRING</code> et la variable <code>ENV</code>:</p>
+
+<pre><code class="language-make">$(call log-format-map, &quot;ASTRING&quot;, $(ENV))
+</code></pre>
+
+<h3 id="les-portes-logiques">Les portes logiques:</h3>
+
+<p><em>Il est également possible d&rsquo;utiliser des portes logiques.</em></p>
+
+<p><strong><em>Dans une <code>target</code>:</em></strong></p>
+
+<p><em>Par exemple pour tester si une variable est attribuée ou non:</em></p>
+
+<pre><code class="language-make"># Check if var is set
+@[ &quot;${MINOR_TAG}&quot; ] || (echo &quot;Variable MINOR_TAG not set&quot;; exit 1)
+</code></pre>
+
+<p><strong>En dehors des targets:</strong></p>
+
+<p><em>Pour tester l&rsquo;architecture processeur par exemple.</em></p>
+
+<pre><code class="language-make">ifeq ($(TARGET_CPU),x86)
+    TARGET_CPU_IS_X86 := 1
+else ifeq ($(TARGET_CPU),x86_64)
+    TARGET_CPU_IS_X86 := 1
+else
+    TARGET_CPU_IS_X86 := 0
+endif
+</code></pre>
+
+<p><a href="https://devhints.io/makefile">source</a></p>
+
+<h3 id="les-appels-récursifs">Les appels récursifs</h3>
+
+<p>Pour appeler un <code>Makefile</code> depuis un <code>Makefile</code>.</p>
+
+<pre><code class="language-make">up:
+  $(MAKE) configure
+</code></pre>
+
+<p><img src="img/meme/fractale_no_brain.gif" alt="No brain fractale" /></p>
+
+<h3 id="le-make-help">Le <code>make help</code>:</h3>
+
+<p>La <code>target</code> help est un petit peu spéciale et nous ne nous attarderons pas tant sur le contenu que sur les possibilités offertes par ce bout de code.</p>
+
+<p><a href="https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html">source</a></p>
+
+<pre><code class="language-make">help: ## This help.
+	@awk 'BEGIN {FS = &quot;:.*?## &quot;} /^[a-zA-Z_-]+:.*?## / {printf &quot;\033[36m%-30s\033[0m %s\n&quot;, $$1, $$2}' $(MAKEFILE_LIST)
+</code></pre>
+
+<p>Le help permet donc d&rsquo;auto documenter les <code>targets</code> du <code>Makefile</code> à partir des commentaires de code.
+Il suffit doc d&rsquo;écrire en fin de ligne un commentaire avec un <code>##</code> qui lira la ligne grâce au help:</p>
+
+<pre><code class="language-make">build: ## Je sers à build
+	@echo &quot;+ $@&quot;
+	@go build -v
+</code></pre>
+
+<p>Donnera:</p>
+
+<pre><code class="language-bash">$ make help
+help                           This help.
+all                            Go Test and build
+test                           Run go test
+install                        Install vmctl
+build                          Je sers à build
+</code></pre>
+
+<p><img src="/img/meme/astuce_oss.gif" alt="oss117 astuce" /></p>
+
+<h3 id="python-et-les-virtual-env">Python et les virtual env</h3>
+
+<p>Dans python les <a href="https://wiki.archlinux.org/index.php/Python/Virtual_environment">virtuals envs</a> sont une bonne pratique de développement. Néanmoins il est parfois difficile de les utiliser avec un <code>Makefile</code>. Affin de vous éviter ma calvitie due a un arrachage de cheveux là dessu. voici une astuce pour résoudre cet inconvénient.</p>
+
+<p>merci à <a href="https://github.com/jed-frey">@jed-frey</a> qui a <a href="https://gist.github.com/jed-frey/fcfb3adbf2e5ff70eae44b04d30640ad">pondu un gist</a> à ce sujet.</p>
+
+<p>Voici donc ma <code>target</code> favorite pour manier des virtuals envs:</p>
+
+<pre><code class="language-make">init:  ## Install utils from requirements.txt
+	@echo &quot;+ $@&quot;
+	@python3 -m venv venv
+	@( \
+		source ./venv/bin/activate; \
+		pip install --upgrade -r requirements.txt; \
+	)
+	@echo ====================================
+	@echo [OK] Run:
+	@echo source venv/bin/activate
+</code></pre>
+
+<hr />
+
+<p>Je pense vous avoir bien chargé en doc et vais donc m&rsquo;arrêter ici :).</p>
+
+<p>Je vous invite fortement à utiliser/améliorer vos <code>Makefiles</code>. Ils apportent une stabilité dans l&rsquo;usage sur vos projets et vos développeurs vous en remercieront :)</p>
+
+<p><img src="/img/meme/vous_etes_les_meilleurs_asdlf.gif" alt="vous êtes les meilleurs" /></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1252 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-08-12 18:49 &#43;0200</p>
+        </div>
+
+        
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span></span>
+            <span> <a href="https://nofreedisk.space/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
+
+
+
+    </body>
+</html>
