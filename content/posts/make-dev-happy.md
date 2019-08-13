@@ -60,7 +60,7 @@ Un autre argument est que [le sous-système Linux](https://docs.microsoft.com/fr
 
 Voici un `Makefile` d'exemple pour faire du `golang`. Nous allons donc le disséquer (ou pas d'ailleurs, mais ca peut toujours servir).
 
-```make
+```makefile
 #!make
 
 .PHONY: all
@@ -99,12 +99,12 @@ build: ## Go build
 
 ### Targets:
 Il est possible de chainer des `targets` avec `target-name: target2 target3`:
-    ```make
+    ```makefile
     all: test build ## Go Test and build`
         @echo "+ $@
     ```
 On peut également passer des arguments aux `targets`:
-```make
+```makefile
 up: export ARG = --build
 up: config ## Run my application
 	@echo "+ $@"
@@ -119,7 +119,7 @@ Chaque commande peut avoir un préfixe:
 `-` qui ignore les erreurs.
 `+` qui exécute la commande même si le make est en mode "ne pas exécuter".
 
-```make
+```makefile
 up: ## Up the app
     @echo "Y'a de la pomme là-dedans ?!"
     -ls je-nexiste-pas.txt
@@ -136,7 +136,7 @@ En les définissant lors de l'appel du `Makefile` dans le shell:
 $ make my-target MYVAR='Il fallut que vous le sussiez pour que vous le pute'
 ```
 Dans le `Makefile` :
-```make
+```makefile
 # Run script and use output as value and export the variable.
 export VERSION := $(shell ./get-version.sh)
 KUBE := /usr/bin/kubectl
@@ -152,7 +152,7 @@ Il est possible de créer des variables qui contiennent des retours de commandes
 Voici donc un exemple qui récupère un secret depuis une commande [kubernetes](https://fr.wikipedia.org/wiki/Kubernetes).
 La commande n'étant utilisé que lorsque la variable est appelée dans une `target`
 
-```make
+```makefile
 # Variable definition
 GET_PASSWORD = `kubectl get secret --namespace default mirror-mariadb -o jsonpath="{.data.mariadb-root-password}" | base64 --decode`
 
@@ -166,14 +166,14 @@ configure: ## Apply basic configurations
 ### Les fonctions
 Il est possible d'utiliser des fonctions dans un makefile (et ainsi éviter la démoniaque duplication de code.).
 Voici donc comment procéder:
-```make
+```makefile
 define log-format-map
     @awk 'BEGIN {printf "\033[36m%-30s\033[0m %s\n", $(1), $(2)}'
 endef
 ```
 
 Et pour l'appeler en lui passant le string `ASTRING` et la variable `ENV`:
-```make
+```makefile
 $(call log-format-map, "ASTRING", $(ENV))
 ```
 ### Les portes logiques:
@@ -182,7 +182,7 @@ $(call log-format-map, "ASTRING", $(ENV))
 ***Dans une `target`:***
 
 *Par exemple pour tester si une variable est attribuée ou non:*
-```make
+```makefile
 # Check if var is set
 @[ "${MINOR_TAG}" ] || (echo "Variable MINOR_TAG not set"; exit 1)
 ```
@@ -190,7 +190,7 @@ $(call log-format-map, "ASTRING", $(ENV))
 **En dehors des targets:**
 
 *Pour tester l'architecture processeur par exemple.*
-```make
+```makefile
 ifeq ($(TARGET_CPU),x86)
     TARGET_CPU_IS_X86 := 1
 else ifeq ($(TARGET_CPU),x86_64)
@@ -203,7 +203,7 @@ endif
 
 ### Les appels récursifs
 Pour appeler un `Makefile` depuis un `Makefile`.
-```make
+```makefile
 up:
   $(MAKE) configure
 ```
@@ -216,7 +216,7 @@ La `target` help est un petit peu spéciale et nous ne nous attarderons pas tant
 
 [source](https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html)
 
-```make
+```makefile
 help: ## This help.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 ```
@@ -224,7 +224,7 @@ help: ## This help.
 Le help permet donc d'auto documenter les `targets` du `Makefile` à partir des commentaires de code.
 Il suffit doc d'écrire en fin de ligne un commentaire avec un `##` qui lira la ligne grâce au help:
 
-```make
+```makefile
 build: ## Je sers à build
 	@echo "+ $@"
 	@go build -v
@@ -247,7 +247,7 @@ Dans python les [virtuals envs](https://wiki.archlinux.org/index.php/Python/Virt
 merci à [@jed-frey](https://github.com/jed-frey) qui a [pondu un gist](https://gist.github.com/jed-frey/fcfb3adbf2e5ff70eae44b04d30640ad) à ce sujet.
 
 Voici donc ma `target` favorite pour manier des virtuals envs:
-```make
+```makefile
 init:  ## Install utils from requirements.txt
 	@echo "+ $@"
 	@python3 -m venv venv
