@@ -204,7 +204,7 @@ up:
   $(MAKE) configure
 ```
 
-![No brain fractale](img/meme/fractale_no_brain.gif)
+<!-- ![No brain fractale](img/meme/fractale_no_brain.gif) -->
 
 
 ### Le `make help`:
