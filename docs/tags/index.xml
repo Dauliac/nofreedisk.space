@@ -6,9 +6,46 @@
     <description>Recent content in Tags on nofreedisk.space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 12 Aug 2019 18:49:49 +0200</lastBuildDate>
     
 	<atom:link href="https://nofreedisk.space/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cicd</title>
+      <link>https://nofreedisk.space/tags/cicd/</link>
+      <pubDate>Mon, 12 Aug 2019 18:49:49 +0200</pubDate>
+      
+      <guid>https://nofreedisk.space/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://nofreedisk.space/tags/cli/</link>
+      <pubDate>Mon, 12 Aug 2019 18:49:49 +0200</pubDate>
+      
+      <guid>https://nofreedisk.space/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>makefile</title>
+      <link>https://nofreedisk.space/tags/makefile/</link>
+      <pubDate>Mon, 12 Aug 2019 18:49:49 +0200</pubDate>
+      
+      <guid>https://nofreedisk.space/tags/makefile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://nofreedisk.space/tags/shell/</link>
+      <pubDate>Mon, 12 Aug 2019 18:49:49 +0200</pubDate>
+      
+      <guid>https://nofreedisk.space/tags/shell/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

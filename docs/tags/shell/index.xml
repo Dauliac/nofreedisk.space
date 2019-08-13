@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on nofreedisk.space</title>
+    <link>https://nofreedisk.space/tags/shell/</link>
+    <description>Recent content in shell on nofreedisk.space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Aug 2019 18:49:49 +0200</lastBuildDate>
+    
+	<atom:link href="https://nofreedisk.space/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Make dev happy</title>
+      <link>https://nofreedisk.space/posts/make-dev-happy/</link>
+      <pubDate>Mon, 12 Aug 2019 18:49:49 +0200</pubDate>
+      
+      <guid>https://nofreedisk.space/posts/make-dev-happy/</guid>
+      <description>Les Makefiles si vous avez déjà codé en c cet outil a du autant vous prendre la tête que vous apporter de l&amp;rsquo;aide.
+Pour ceux qui ne connaissent pas:
+ Make est un logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d&amp;rsquo;éléments de base tels que du code source. Dans notre cas c&amp;rsquo;est les pseudos flags (les targets) qui vont nous intéresser. L&amp;rsquo;appel des targets se faisant très facilement:</description>
+    </item>
+    
+  </channel>
+</rss>

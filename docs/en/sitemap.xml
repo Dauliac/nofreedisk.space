@@ -35,6 +35,46 @@
   </url>
   
   <url>
+    <loc>https://nofreedisk.space/tags/</loc>
+    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://nofreedisk.space/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nofreedisk.space/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/tags/cicd/</loc>
+    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/tags/cli/</loc>
+    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/tags/makefile/</loc>
+    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/tags/shell/</loc>
+    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nofreedisk.space/categories/</loc>
     <priority>0</priority>
     <xhtml:link
@@ -46,21 +86,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nofreedisk.space/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://nofreedisk.space/tags/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://nofreedisk.space/fr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nofreedisk.space/tags/"
                 />
   </url>
   

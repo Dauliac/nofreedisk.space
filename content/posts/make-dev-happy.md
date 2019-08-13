@@ -4,7 +4,11 @@ date: 2019-08-12T18:49:49+02:00
 draft: false
 author:
   name: dauliac
-
+tags:
+  - shell
+  - cli
+  - makefile
+  - cicd
 ---
 
 Les `Makefiles` si vous avez déjà codé en [`c`](https://fr.wikipedia.org/wiki/C_(langage)) cet outil a du autant vous prendre la tête que vous apporter de l'aide.
