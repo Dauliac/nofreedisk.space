@@ -5,8 +5,187 @@
         <description>Recent content in Posts on nofreedisk.space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 12 Aug 2019 18:49:49 +0200</lastBuildDate>
+        <lastBuildDate>Tue, 13 Aug 2019 16:53:16 +0200</lastBuildDate>
         <atom:link href="https://nofreedisk.space/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Surf on Shell</title>
+            <link>https://nofreedisk.space/posts/surf-on-shell/</link>
+            <pubDate>Tue, 13 Aug 2019 16:53:16 +0200</pubDate>
+            
+            <guid>https://nofreedisk.space/posts/surf-on-shell/</guid>
+            <description>Je passe un temps infini à gérer mes configurations système (le tout en cli). Non pas qu&amp;rsquo;elles en nécesite le besoin (un fichier ça n&amp;rsquo;a pas de besoins). Il s&amp;rsquo;agirait plutôt d&amp;rsquo;une douce névrose qui s&amp;rsquo;installe petit à petit, jusqu&amp;rsquo;à me ronger complètement. Je me transforme en mamie gâteau qui au lieu d&amp;rsquo;arroser ses plantes configure ses dotfiles car: &amp;ldquo;Il n&amp;rsquo;y a qu&amp;rsquo;eux qui m&amp;rsquo; l&amp;rsquo;aiment vraiment&amp;rdquo;.
+Bref ! On va voir comment surfer sur le shell comme un hipster ricer.</description>
+            <content type="html"><![CDATA[
+
+<p>Je passe un temps infini à gérer mes configurations système (le tout en cli). Non pas qu&rsquo;elles en nécesite le besoin (un fichier ça n&rsquo;a pas de besoins).
+Il s&rsquo;agirait plutôt d&rsquo;une douce névrose qui s&rsquo;installe petit à petit, jusqu&rsquo;à me ronger complètement. Je me transforme en mamie gâteau qui au lieu d&rsquo;arroser ses plantes configure ses <a href="https://github.com/Dauliac/dotfiles">dotfiles</a> car: &ldquo;Il n&rsquo;y a qu&rsquo;eux qui <del>m&rsquo;</del> l&rsquo;aiment vraiment&rdquo;.</p>
+
+<p>Bref ! On va voir comment surfer sur le shell comme un <del>hipster</del> <strong>ricer</strong>.</p>
+
+
+    <img src="/img/meme/surf_dog.gif"  alt="dog surfin&#39;"  class="center"  style="width: 30em;"  />
+
+
+
+<hr />
+
+<h2 id="mais-dit-moi-jamy-c-est-quoi-un-ricer">Mais dit moi Jamy c&rsquo;est quoi un ricer ?</h2>
+
+<p>Euh bien le ricing d&rsquo;après l&rsquo;internaute <a href="https://www.reddit.com/r/unixporn/comments/3iy3wd/stupid_question_what_is_ricing/">@mooseV2</a>:</p>
+
+<blockquote>
+<p>Ricing comes from the car terminology &ldquo;ricing&rdquo; or &ldquo;RICEing&rdquo;.
+In the car world, RICE stands for Race Inspired Cosmetic Enhancement.
+When you put a scoop on your car (that doesn&rsquo;t lead to a cold air intake) or a big spoiler (which won&rsquo;t make a difference), you&rsquo;re ricing. The idea is to increase its perceived performance through cosmetics.</p>
+</blockquote>
+
+<p>Je ne sais pas si sa définition est la bonne, mais on s&rsquo;en contentera. Et un ricer c&rsquo;est quelqu&rsquo;un qui fait du ricing (cqfd).</p>
+
+<p>Nous pouvons donc continuer.</p>
+
+<h2 id="cli-et-compagnie">CLI et compagnie</h2>
+
+<p>Le shell c&rsquo;est de <a href="https://en.wikipedia.org/wiki/Command-line_interface">la ligne de commande</a> éventuellement du <a href="https://en.wikipedia.org/wiki/Ncurses">ncurse</a> mais surtout jamais <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">d&rsquo;interfaces graphiques</a>.</p>
+
+<blockquote>
+<p>Mais c&rsquo;est moche et austère le cli moi je veux de vrais outils.</p>
+</blockquote>
+
+<p>Alors oui mais non.</p>
+
+<p>Déja <a href="https://www.reddit.com/r/unixporn/search/?q=rice&amp;restrict_sr=1">c&rsquo;est pas moche</a> !</p>
+
+<p>Et en plus on a pas toujours accès à une session graphique ! imaginez votre sys-admin est mort, vous <del>êtes coincé dans la jungle</del> n&rsquo;avez pas d&rsquo;outil de journalisation des logs (mauvaise idée) et votre prod vient de tomber.</p>
+
+<p>Bah va falloir aller sur la machine et tripatouiller dans le cambouis.</p>
+
+<p>Sans parler du grain de temps dû à la personnalisation et combinaison d&rsquo;outils très modulaires (<em>la <a href="https://fr.wikipedia.org/wiki/Flux_standard">sortie standard</a> ça marche bien !</em>)</p>
+
+<p><strong>NLDR:</strong> Je n&rsquo;explore pas les options de ces outils <a href="https://lmqt.fyi/?q=rtfm">#RTFM</a>. Le but est plus de présenter un mix des outils que j&rsquo;utilise affin de les partager.</p>
+
+<p>Donc voici une liste d&rsquo;outil permettant kiffer sa race dans ce cas précis.</p>
+
+<h3 id="1-ag-the-silversearcher">#1 &ldquo;ag&rdquo; the silversearcher</h3>
+
+<p>Pour le premier je ne me mouille pas trop, voici <code>ag</code>.</p>
+
+<p>C&rsquo;est un outil permettant tout simplement de trouver une string dans un système de fichiers.</p>
+
+<p><a href="https://github.com/ggreer/the_silver_searcher">code source</a></p>
+
+<p>Il est:
+- rapide (plus que <a href="https://github.com/beyondgrep/ack3/">ack</a> en tout cas)
+- en couleur (j&rsquo;arrive a voir de 400 à 800nm à peu près)
+- intuitif
+- il respecte le principe <a href="https://en.wikipedia.org/wiki/KISS_principle">kiss</a></p>
+
+<p><strong>Exemple:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ag password
+
+mysupersecretapp/secrets
+<span style="color:#ae81ff">12</span>:ADMIN_PASSWORD<span style="color:#f92672">=</span>guest</code></pre></div>
+<p>Voilà !</p>
+
+
+    <img src="/img/meme/password_guest_archer.gif"  alt="password is guest"  class="left"  style="width: 30em;"  />
+
+
+
+<p><strong>TIPS:</strong> Voici comment faire pareil avec find et grep.
+C&rsquo;est un peu plus lent mais suffisant dans la majorité des cas</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep -nri password
+mysupersecretapp/secrets:12:ADMIN_PASSWORD<span style="color:#f92672">=</span>guest</code></pre></div>
+<h3 id="2-fd-50-shorter-than-find">#2 &ldquo;fd&rdquo; 50% shorter than find</h3>
+
+<p>Une alternative pour &ldquo;brainless&rdquo; de find.
+<code>fd</code> permet tout simplement de trouver un fichier dans un système de fichier.</p>
+
+<p>Tu apelles le binaire (&ldquo;BINNAAAAAAAAAAIRE !&rdquo;), ta string et tu appuies sur entrer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fd sex /
+/home/dauliac/Pictures/sextape.mp4
+/home/dauliac/Pictures/sextape_2.mp4
+/home/dauliac/Pictures/sextape-4.mp4</code></pre></div>
+<p>Et hop vous pouvez retrouver vos fichiers mal nommés/perdus !</p>
+
+<p><a href="https://github.com/sharkdp/fd">code source</a></p>
+
+<p>La version find:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find /home/username/ -name <span style="color:#e6db74">&#34;sex.*&#34;</span></code></pre></div>
+<h3 id="3-fzf-the-fuzzy-finder">#3 &ldquo;fzf&rdquo; The fuzzy finder</h3>
+
+<p>Difficile à décrire. En gros on pipe une liste de ligne au binaire et il affiche une interface permettant de choisir dans cette liste.
+La grosse plus-value se trouve dans l&rsquo;ordre d&rsquo;affichage qui se met à jour à chaque saisie et trie par pertinence en ordre décroissant.</p>
+
+<p>
+    <img src="/img/screenshot/fzf_history.png"  alt="fzf history"  class="left"  style="width: 50em;"  />
+
+
+<em>Je n&rsquo;ai qu&rsquo;à faire la macro <code>CTRL+R</code> comme d&rsquo;habitude pour lire mon historique.</em></p>
+
+<p>Il peut donc servir à trancher dans tout type de liste à n&rsquo;importe quel moment:
+- Dans l&rsquo;historique bash.
+- Pour faire un <code>kill</code>.
+- Saisir un fichier trouvé grâce à <code>fd</code>.
+- Ouvrir un fichier contenant une string trouvée avec <code>ag</code>.
+- Être combiné avec <code>vim</code>.
+- Containers docker, pods kubernetes, machines virtuelles.</p>
+
+<p>Mais vu que je suis sympa je vous offre une petite liste de mes tips <code>fzf</code></p>
+
+<h4 id="git-branch"><code>git branch</code></h4>
+
+<p>Ajoutez cela dans votre <code>~/.bashrc</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">function</span> gfb <span style="color:#f92672">{</span>
+    <span style="color:#75715e"># git checkout $(git branch | fzf | awk &#39;{print $2}&#39;)</span>
+    local tags branches target
+      tags<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>
+    git tag | awk <span style="color:#e6db74">&#39;{print &#34;\x1b[31;1mtag\x1b[m\t&#34; $1}&#39;</span><span style="color:#66d9ef">)</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">return</span>
+      branches<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>
+    git branch --all | grep -v HEAD |
+    sed <span style="color:#e6db74">&#34;s/.* //&#34;</span> | sed <span style="color:#e6db74">&#34;s#remotes/[^/]*/##&#34;</span> |
+    sort -u | awk <span style="color:#e6db74">&#39;{print &#34;\x1b[34;1mbranch\x1b[m\t&#34; $1}&#39;</span><span style="color:#66d9ef">)</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">return</span>
+      target<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>
+    <span style="color:#f92672">(</span>echo <span style="color:#e6db74">&#34;</span>$tags<span style="color:#e6db74">&#34;</span>; echo <span style="color:#e6db74">&#34;</span>$branches<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span> |
+        fzf --no-hscroll --no-multi --delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\t&#34;</span> -n <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            --ansi --preview<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;git log -200 --pretty=format:%s </span><span style="color:#66d9ef">$(</span>echo <span style="color:#f92672">{</span>+2..<span style="color:#f92672">}</span> |  sed <span style="color:#e6db74">&#39;s/$/../&#39;</span> <span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">)</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">return</span>
+      git checkout <span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$target<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Et vous aurez droit en tapant <code>gfb</code> à un joli menu pour changer de branche git:</p>
+
+
+    <img src="/img/screenshot/gfb.png"  alt="git branch fzf"  class="left"  style="width: 50em;"  />
+
+
+
+<h4 id="gitignore"><code>gitignore</code></h4>
+
+<p>Ajouter dans votre <code>$PATH</code> ce fichier <a href="https://gist.github.com/phha/cb4f4bb07519dc494609792fb918e167"><code>gitignore</code></a> et rendez le executable.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.local/bin/
+curl -o gitignore ~/.local/bin/gitignore -L -O https://gist.github.com/phha/cb4f4bb07519dc494609792fb918e167
+chmod +x ~/.local/bin/gitignore</code></pre></div>
+<p>maintenant quand vous lancer <code>gitignore</code> il vous permettra de choisir grace à une <a href="https://www.gitignore.io/api/`quel">api</a> est le <code>.gitignore</code> adapté pour votre projet.</p>
+
+
+    <img src="/img/screenshot/fzf_gitignore.png"  alt="gitignore fzf"  class="left"  style="width: 50em;"  />
+
+
+
+<p><a href="https://github.com/junegunn/fzf">code source</a></p>
+
+<hr />
+
+<p>Je ferai surement d&rsquo;autres articles sur mes configurations affin de partager mes outils de travail.
+N&rsquo;hésitez pas à aller voir mes <a href="https://github.com/Dauliac/dotfiles">dotfiles</a>.</p>
+
+<p><strong>Bye !</strong></p>
+
+
+    <img src="https://media.giphy.com/media/jyPgrG8iqMu6Da7RWb/giphy.gif"  alt="gitignore fzf"  class="left"  style="width: 30em;"  />
+
+
+]]></content>
+        </item>
         
         <item>
             <title>Make dev happy</title>
@@ -49,8 +228,6 @@ C&rsquo;est bien ça créer des habitudes, des repères, point d&rsquo;accroche,
 <p><strong>Note:</strong> La normalisation des actions reproductible permet également dans le cadre de pipelines de CI/CD d&rsquo;effectuer des actions et des changements de code sans changer tous les pipelines qui vont dépendre d&rsquo;un projet donné.</p>
 
 <p>Les Makefile vont donc permettre tout cela et ce sans débourser le moindre centime (Manquerai plus que ça).</p>
-
-<!-- ![The mask money](/img/meme/money_the_mask.gif) -->
 
 
     <img src="/img/meme/money_the_mask.gif"  alt="money the mask"  class="center"  style="width: 30em;"  />

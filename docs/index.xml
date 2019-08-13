@@ -6,10 +6,20 @@
     <description>Recent content on nofreedisk.space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Aug 2019 16:36:35 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2019 16:53:16 +0200</lastBuildDate>
     
 	<atom:link href="https://nofreedisk.space/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Surf on Shell</title>
+      <link>https://nofreedisk.space/posts/surf-on-shell/</link>
+      <pubDate>Tue, 13 Aug 2019 16:53:16 +0200</pubDate>
+      
+      <guid>https://nofreedisk.space/posts/surf-on-shell/</guid>
+      <description>Je passe un temps infini à gérer mes configurations système (le tout en cli). Non pas qu&amp;rsquo;elles en nécesite le besoin (un fichier ça n&amp;rsquo;a pas de besoins). Il s&amp;rsquo;agirait plutôt d&amp;rsquo;une douce névrose qui s&amp;rsquo;installe petit à petit, jusqu&amp;rsquo;à me ronger complètement. Je me transforme en mamie gâteau qui au lieu d&amp;rsquo;arroser ses plantes configure ses dotfiles car: &amp;ldquo;Il n&amp;rsquo;y a qu&amp;rsquo;eux qui m&amp;rsquo; l&amp;rsquo;aiment vraiment&amp;rdquo;.
+Bref ! On va voir comment surfer sur le shell comme un hipster ricer.</description>
+    </item>
     
     <item>
       <title>About</title>

@@ -3,40 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nofreedisk.space/about/</loc>
-    <lastmod>2019-08-13T16:36:35+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nofreedisk.space/</loc>
-    <lastmod>2019-08-13T16:36:35+02:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://nofreedisk.space/fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nofreedisk.space/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://nofreedisk.space/posts/make-dev-happy/</loc>
-    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nofreedisk.space/posts/</loc>
-    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/posts/surf-on-shell/</loc>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://nofreedisk.space/tags/</loc>
-    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -51,25 +30,69 @@
   </url>
   
   <url>
+    <loc>https://nofreedisk.space/tags/cli/</loc>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/tags/dotfiles/</loc>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/</loc>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://nofreedisk.space/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nofreedisk.space/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/tags/ricing/</loc>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/tags/shell/</loc>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/tags/tools/</loc>
+    <lastmod>2019-08-13T16:53:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/about/</loc>
+    <lastmod>2019-08-13T16:36:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nofreedisk.space/posts/make-dev-happy/</loc>
+    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nofreedisk.space/tags/cicd/</loc>
     <lastmod>2019-08-12T18:49:49+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nofreedisk.space/tags/cli/</loc>
-    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://nofreedisk.space/tags/makefile/</loc>
-    <lastmod>2019-08-12T18:49:49+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nofreedisk.space/tags/shell/</loc>
     <lastmod>2019-08-12T18:49:49+02:00</lastmod>
     <priority>0</priority>
   </url>

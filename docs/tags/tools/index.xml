@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell on nofreedisk.space</title>
-    <link>https://nofreedisk.space/tags/shell/</link>
-    <description>Recent content in shell on nofreedisk.space</description>
+    <title>tools on nofreedisk.space</title>
+    <link>https://nofreedisk.space/tags/tools/</link>
+    <description>Recent content in tools on nofreedisk.space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Aug 2019 16:53:16 +0200</lastBuildDate>
     
-	<atom:link href="https://nofreedisk.space/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nofreedisk.space/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>https://nofreedisk.space/posts/surf-on-shell/</guid>
       <description>Je passe un temps infini à gérer mes configurations système (le tout en cli). Non pas qu&amp;rsquo;elles en nécesite le besoin (un fichier ça n&amp;rsquo;a pas de besoins). Il s&amp;rsquo;agirait plutôt d&amp;rsquo;une douce névrose qui s&amp;rsquo;installe petit à petit, jusqu&amp;rsquo;à me ronger complètement. Je me transforme en mamie gâteau qui au lieu d&amp;rsquo;arroser ses plantes configure ses dotfiles car: &amp;ldquo;Il n&amp;rsquo;y a qu&amp;rsquo;eux qui m&amp;rsquo; l&amp;rsquo;aiment vraiment&amp;rdquo;.
 Bref ! On va voir comment surfer sur le shell comme un hipster ricer.</description>
-    </item>
-    
-    <item>
-      <title>Make dev happy</title>
-      <link>https://nofreedisk.space/posts/make-dev-happy/</link>
-      <pubDate>Mon, 12 Aug 2019 18:49:49 +0200</pubDate>
-      
-      <guid>https://nofreedisk.space/posts/make-dev-happy/</guid>
-      <description>Les Makefiles si vous avez déjà codé en c cet outil a du autant vous prendre la tête que vous apporter de l&amp;rsquo;aide.
-Pour ceux qui ne connaissent pas:
- Make est un logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d&amp;rsquo;éléments de base tels que du code source. Dans notre cas c&amp;rsquo;est les pseudos flags (les targets) qui vont nous intéresser. L&amp;rsquo;appel des targets se faisant très facilement:</description>
     </item>
     
   </channel>

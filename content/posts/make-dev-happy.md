@@ -40,7 +40,6 @@ On peut également reproduire cette nomenclature sur tous nos projets et ça c'e
 
 Les Makefile vont donc permettre tout cela et ce sans débourser le moindre centime (Manquerai plus que ça).
 
-<!-- ![The mask money](/img/meme/money_the_mask.gif) -->
 {{< image src="/img/meme/money_the_mask.gif" alt="money the mask" position="center" style="width: 30em;" >}}
 
 La structure d'un `Makefile` et le système de `targets` est exactement approprié à ces problématiques.

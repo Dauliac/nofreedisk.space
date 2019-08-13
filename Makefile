@@ -9,6 +9,10 @@ help: ## This help.
 
 .DEFAULT_GOAL := help
 
+init: ## Get theme with git submodule
+	@echo "+ $@"
+	@git submodule update --init --recursive
+
 srv: ## Run hugo server
 	@echo "+ $@"
 	@hugo server
