@@ -67,7 +67,7 @@ C'est un outil permettant tout simplement de trouver une string dans un système
 
 Il est:
 - rapide (plus que [ack](https://github.com/beyondgrep/ack3/) en tout cas)
-- en couleur (j'arrive a voir de 400 à 800nm à peu près)
+- en couleur (j'arrive à voir de 400 à 800nm à peu près)
 - intuitif
 - il respecte le principe [kiss](https://en.wikipedia.org/wiki/KISS_principle)
 
@@ -94,12 +94,12 @@ mysupersecretapp/secrets:12:ADMIN_PASSWORD=guest
 Une alternative pour "brainless" de find.
 `fd` permet tout simplement de trouver un fichier dans un système de fichier.
 
-Tu apelles le binaire ("BINNAAAAAAAAAAIRE !"), ta string et tu appuies sur entrer.
+Tu appelles le binaire ("BINNAAAAAAAAAAIRE !"), ta string et tu appuies sur entrée.
 ```bash
 fd sex /
-/home/dauliac/Pictures/sextape.mp4
-/home/dauliac/Pictures/sextape_2.mp4
-/home/dauliac/Pictures/sextape-4.mp4
+/home/dauliac/Videos/sextape.mp4
+/home/dauliac/Videos/sextape_2.mp4
+/home/dauliac/Videos/sextape-4.mp4
 ```
 Et hop vous pouvez retrouver vos fichiers mal nommés/perdus !
 
@@ -154,7 +154,7 @@ Et vous aurez droit en tapant `gfb` à un joli menu pour changer de branche git:
 {{< image src="/img/screenshot/gfb.png" alt="git branch fzf" position="left" style="width: 50em;" >}}
 
 #### `gitignore`
-Ajouter dans votre `$PATH` ce fichier [`gitignore`](https://gist.github.com/phha/cb4f4bb07519dc494609792fb918e167) et rendez le executable.
+Ajoutez dans votre `$PATH` ce fichier [`gitignore`](https://gist.github.com/phha/cb4f4bb07519dc494609792fb918e167) et rendez le executable.
 
 ```bash
 mkdir -p ~/.local/bin/
@@ -162,14 +162,20 @@ curl -o gitignore ~/.local/bin/gitignore -L -O https://gist.github.com/phha/cb4f
 chmod +x ~/.local/bin/gitignore
 ```
 
-maintenant quand vous lancer `gitignore` il vous permettra de choisir grace à une [api](https://www.gitignore.io/api/`quel) est le `.gitignore` adapté pour votre projet.
+maintenant quand vous lancez `gitignore` il vous permettra de choisir grâce à une [api](https://www.gitignore.io/api/`) quel est le `.gitignore` adapté pour votre projet.
 
 {{< image src="/img/screenshot/fzf_gitignore.png" alt="gitignore fzf" position="left" style="width: 50em;" >}}
 
+---
+Liste d'autres outils cools:
+[`bat`](https://github.com/sharkdp/bat)
+[`ripgrep`](https://github.com/BurntSushi/ripgrep)
+[`chezmoi`](https://github.com/twpayne/chezmoi)
+[`hyperfine`](https://github.com/sharkdp/hyperfine)
 
 ---
 
-Je ferai surement d'autres articles sur mes configurations affin de partager mes outils de travail.
+Je ferai sûrement d'autres articles sur mes configurations afin de partager mes outils de travail.
 N'hésitez pas à aller voir mes [dotfiles](https://github.com/Dauliac/dotfiles).
 
 
