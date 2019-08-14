@@ -44,7 +44,7 @@ Bref ! On va voir comment surfer sur le shell comme un hipster ricer.">
 
 <meta itemprop="datePublished" content="2019-08-13T16:53:16&#43;02:00" />
 <meta itemprop="dateModified" content="2019-08-13T16:53:16&#43;02:00" />
-<meta itemprop="wordCount" content="818">
+<meta itemprop="wordCount" content="827">
 
 
 
@@ -190,7 +190,7 @@ When you put a scoop on your car (that doesn&rsquo;t lead to a cold air intake) 
 
 <p>Il est:
 - rapide (plus que <a href="https://github.com/beyondgrep/ack3/">ack</a> en tout cas)
-- en couleur (j&rsquo;arrive a voir de 400 à 800nm à peu près)
+- en couleur (j&rsquo;arrive à voir de 400 à 800nm à peu près)
 - intuitif
 - il respecte le principe <a href="https://en.wikipedia.org/wiki/KISS_principle">kiss</a></p>
 
@@ -215,11 +215,11 @@ mysupersecretapp/secrets:12:ADMIN_PASSWORD<span style="color:#f92672">=</span>gu
 <p>Une alternative pour &ldquo;brainless&rdquo; de find.
 <code>fd</code> permet tout simplement de trouver un fichier dans un système de fichier.</p>
 
-<p>Tu apelles le binaire (&ldquo;BINNAAAAAAAAAAIRE !&rdquo;), ta string et tu appuies sur entrer.</p>
+<p>Tu appelles le binaire (&ldquo;BINNAAAAAAAAAAIRE !&rdquo;), ta string et tu appuies sur entrée.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fd sex /
-/home/dauliac/Pictures/sextape.mp4
-/home/dauliac/Pictures/sextape_2.mp4
-/home/dauliac/Pictures/sextape-4.mp4</code></pre></div>
+/home/dauliac/Videos/sextape.mp4
+/home/dauliac/Videos/sextape_2.mp4
+/home/dauliac/Videos/sextape-4.mp4</code></pre></div>
 <p>Et hop vous pouvez retrouver vos fichiers mal nommés/perdus !</p>
 
 <p><a href="https://github.com/sharkdp/fd">code source</a></p>
@@ -276,11 +276,11 @@ La grosse plus-value se trouve dans l&rsquo;ordre d&rsquo;affichage qui se met �
 
 <h4 id="gitignore"><code>gitignore</code></h4>
 
-<p>Ajouter dans votre <code>$PATH</code> ce fichier <a href="https://gist.github.com/phha/cb4f4bb07519dc494609792fb918e167"><code>gitignore</code></a> et rendez le executable.</p>
+<p>Ajoutez dans votre <code>$PATH</code> ce fichier <a href="https://gist.github.com/phha/cb4f4bb07519dc494609792fb918e167"><code>gitignore</code></a> et rendez le executable.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.local/bin/
 curl -o gitignore ~/.local/bin/gitignore -L -O https://gist.github.com/phha/cb4f4bb07519dc494609792fb918e167
 chmod +x ~/.local/bin/gitignore</code></pre></div>
-<p>maintenant quand vous lancer <code>gitignore</code> il vous permettra de choisir grace à une <a href="https://www.gitignore.io/api/`quel">api</a> est le <code>.gitignore</code> adapté pour votre projet.</p>
+<p>maintenant quand vous lancez <code>gitignore</code> il vous permettra de choisir grâce à une <a href="https://www.gitignore.io/api/`">api</a> quel est le <code>.gitignore</code> adapté pour votre projet.</p>
 
 
     <img src="/img/screenshot/fzf_gitignore.png"  alt="gitignore fzf"  class="left"  style="width: 50em;"  />
@@ -289,7 +289,15 @@ chmod +x ~/.local/bin/gitignore</code></pre></div>
 
 <hr />
 
-<p>Je ferai surement d&rsquo;autres articles sur mes configurations affin de partager mes outils de travail.
+<p>Liste d&rsquo;autres outils cools:
+<a href="https://github.com/sharkdp/bat"><code>bat</code></a>
+<a href="https://github.com/BurntSushi/ripgrep"><code>ripgrep</code></a>
+<a href="https://github.com/twpayne/chezmoi"><code>chezmoi</code></a>
+<a href="https://github.com/sharkdp/hyperfine"><code>hyperfine</code></a></p>
+
+<hr />
+
+<p>Je ferai sûrement d&rsquo;autres articles sur mes configurations afin de partager mes outils de travail.
 N&rsquo;hésitez pas à aller voir mes <a href="https://github.com/Dauliac/dotfiles">dotfiles</a>.</p>
 
 <p><strong>Bye !</strong></p>
@@ -309,7 +317,7 @@ N&rsquo;hésitez pas à aller voir mes <a href="https://github.com/Dauliac/dotfi
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://nofreedisk.space/tags/shell">shell</a></span><span class="tag"><a href="https://nofreedisk.space/tags/cli">cli</a></span><span class="tag"><a href="https://nofreedisk.space/tags/ricing">ricing</a></span><span class="tag"><a href="https://nofreedisk.space/tags/tools">tools</a></span><span class="tag"><a href="https://nofreedisk.space/tags/dotfiles">dotfiles</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>818 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>827 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-08-13 16:53 &#43;0200</p>
         </div>
