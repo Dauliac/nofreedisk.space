@@ -32,7 +32,7 @@ Euh bien le ricing d'après l'internaute [@mooseV2](https://www.reddit.com/r/uni
 > In the car world, RICE stands for Race Inspired Cosmetic Enhancement.
 > When you put a scoop on your car (that doesn't lead to a cold air intake) or a big spoiler (which won't make a difference), you're ricing. The idea is to increase its perceived performance through cosmetics.
 
-Je ne sais pas si sa définition est la bonne, mais on s'en contentera. Et un ricer c'est quelqu'un qui fait du ricing (cqfd).
+Je ne sais pas si sa définition est la bonne, mais on s'en contentera. Et un ricer c'est par extension quelqu'un qui fait du ricing (cqfd).
 
 Nous pouvons donc continuer.
 
@@ -56,7 +56,9 @@ Sans parler du grain de temps dû à la personnalisation et combinaison d'outils
 
 Donc voici une liste d'outil permettant kiffer sa race dans ce cas précis.
 
-### #1 "ag" the silversearcher
+## Les outils
+
+### 1. "ag" the silversearcher
 Pour le premier je ne me mouille pas trop, voici `ag`.
 
 C'est un outil permettant tout simplement de trouver une string dans un système de fichiers.
@@ -88,7 +90,7 @@ $ grep -nri password
 mysupersecretapp/secrets:12:ADMIN_PASSWORD=guest
 ```
 
-### #2 "fd" 50% shorter than find
+### 2. "fd" 50% shorter than find
 Une alternative pour "brainless" de find.
 `fd` permet tout simplement de trouver un fichier dans un système de fichier.
 
@@ -109,9 +111,11 @@ La version find:
 find /home/username/ -name "sex.*"
 ```
 
-### #3 "fzf" The fuzzy finder
+### 3. "fzf" The fuzzy finder
 Difficile à décrire. En gros on pipe une liste de ligne au binaire et il affiche une interface permettant de choisir dans cette liste.
 La grosse plus-value se trouve dans l'ordre d'affichage qui se met à jour à chaque saisie et trie par pertinence en ordre décroissant.
+
+[code source](https://github.com/junegunn/fzf)
 
 {{< image src="/img/screenshot/fzf_history.png" alt="fzf history" position="left" style="width: 50em;" >}}
 *Je n'ai qu'à faire la macro `CTRL+R` comme d'habitude pour lire mon historique.*
@@ -162,7 +166,6 @@ maintenant quand vous lancer `gitignore` il vous permettra de choisir grace à u
 
 {{< image src="/img/screenshot/fzf_gitignore.png" alt="gitignore fzf" position="left" style="width: 50em;" >}}
 
-[code source](https://github.com/junegunn/fzf)
 
 ---
 

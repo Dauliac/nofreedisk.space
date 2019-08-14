@@ -44,7 +44,7 @@ Bref ! On va voir comment surfer sur le shell comme un hipster ricer.">
 
 <meta itemprop="datePublished" content="2019-08-13T16:53:16&#43;02:00" />
 <meta itemprop="dateModified" content="2019-08-13T16:53:16&#43;02:00" />
-<meta itemprop="wordCount" content="814">
+<meta itemprop="wordCount" content="818">
 
 
 
@@ -152,7 +152,7 @@ In the car world, RICE stands for Race Inspired Cosmetic Enhancement.
 When you put a scoop on your car (that doesn&rsquo;t lead to a cold air intake) or a big spoiler (which won&rsquo;t make a difference), you&rsquo;re ricing. The idea is to increase its perceived performance through cosmetics.</p>
 </blockquote>
 
-<p>Je ne sais pas si sa définition est la bonne, mais on s&rsquo;en contentera. Et un ricer c&rsquo;est quelqu&rsquo;un qui fait du ricing (cqfd).</p>
+<p>Je ne sais pas si sa définition est la bonne, mais on s&rsquo;en contentera. Et un ricer c&rsquo;est par extension quelqu&rsquo;un qui fait du ricing (cqfd).</p>
 
 <p>Nous pouvons donc continuer.</p>
 
@@ -178,7 +178,9 @@ When you put a scoop on your car (that doesn&rsquo;t lead to a cold air intake) 
 
 <p>Donc voici une liste d&rsquo;outil permettant kiffer sa race dans ce cas précis.</p>
 
-<h3 id="1-ag-the-silversearcher">#1 &ldquo;ag&rdquo; the silversearcher</h3>
+<h2 id="les-outils">Les outils</h2>
+
+<h3 id="1-ag-the-silversearcher">1. &ldquo;ag&rdquo; the silversearcher</h3>
 
 <p>Pour le premier je ne me mouille pas trop, voici <code>ag</code>.</p>
 
@@ -208,7 +210,7 @@ mysupersecretapp/secrets
 C&rsquo;est un peu plus lent mais suffisant dans la majorité des cas</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep -nri password
 mysupersecretapp/secrets:12:ADMIN_PASSWORD<span style="color:#f92672">=</span>guest</code></pre></div>
-<h3 id="2-fd-50-shorter-than-find">#2 &ldquo;fd&rdquo; 50% shorter than find</h3>
+<h3 id="2-fd-50-shorter-than-find">2. &ldquo;fd&rdquo; 50% shorter than find</h3>
 
 <p>Une alternative pour &ldquo;brainless&rdquo; de find.
 <code>fd</code> permet tout simplement de trouver un fichier dans un système de fichier.</p>
@@ -224,10 +226,12 @@ mysupersecretapp/secrets:12:ADMIN_PASSWORD<span style="color:#f92672">=</span>gu
 
 <p>La version find:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find /home/username/ -name <span style="color:#e6db74">&#34;sex.*&#34;</span></code></pre></div>
-<h3 id="3-fzf-the-fuzzy-finder">#3 &ldquo;fzf&rdquo; The fuzzy finder</h3>
+<h3 id="3-fzf-the-fuzzy-finder">3. &ldquo;fzf&rdquo; The fuzzy finder</h3>
 
 <p>Difficile à décrire. En gros on pipe une liste de ligne au binaire et il affiche une interface permettant de choisir dans cette liste.
 La grosse plus-value se trouve dans l&rsquo;ordre d&rsquo;affichage qui se met à jour à chaque saisie et trie par pertinence en ordre décroissant.</p>
+
+<p><a href="https://github.com/junegunn/fzf">code source</a></p>
 
 <p>
     <img src="/img/screenshot/fzf_history.png"  alt="fzf history"  class="left"  style="width: 50em;"  />
@@ -283,8 +287,6 @@ chmod +x ~/.local/bin/gitignore</code></pre></div>
 
 
 
-<p><a href="https://github.com/junegunn/fzf">code source</a></p>
-
 <hr />
 
 <p>Je ferai surement d&rsquo;autres articles sur mes configurations affin de partager mes outils de travail.
@@ -307,7 +309,7 @@ N&rsquo;hésitez pas à aller voir mes <a href="https://github.com/Dauliac/dotfi
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://nofreedisk.space/tags/shell">shell</a></span><span class="tag"><a href="https://nofreedisk.space/tags/cli">cli</a></span><span class="tag"><a href="https://nofreedisk.space/tags/ricing">ricing</a></span><span class="tag"><a href="https://nofreedisk.space/tags/tools">tools</a></span><span class="tag"><a href="https://nofreedisk.space/tags/dotfiles">dotfiles</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>814 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>818 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-08-13 16:53 &#43;0200</p>
         </div>

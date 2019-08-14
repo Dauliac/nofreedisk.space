@@ -40,7 +40,7 @@ In the car world, RICE stands for Race Inspired Cosmetic Enhancement.
 When you put a scoop on your car (that doesn&rsquo;t lead to a cold air intake) or a big spoiler (which won&rsquo;t make a difference), you&rsquo;re ricing. The idea is to increase its perceived performance through cosmetics.</p>
 </blockquote>
 
-<p>Je ne sais pas si sa définition est la bonne, mais on s&rsquo;en contentera. Et un ricer c&rsquo;est quelqu&rsquo;un qui fait du ricing (cqfd).</p>
+<p>Je ne sais pas si sa définition est la bonne, mais on s&rsquo;en contentera. Et un ricer c&rsquo;est par extension quelqu&rsquo;un qui fait du ricing (cqfd).</p>
 
 <p>Nous pouvons donc continuer.</p>
 
@@ -66,7 +66,9 @@ When you put a scoop on your car (that doesn&rsquo;t lead to a cold air intake) 
 
 <p>Donc voici une liste d&rsquo;outil permettant kiffer sa race dans ce cas précis.</p>
 
-<h3 id="1-ag-the-silversearcher">#1 &ldquo;ag&rdquo; the silversearcher</h3>
+<h2 id="les-outils">Les outils</h2>
+
+<h3 id="1-ag-the-silversearcher">1. &ldquo;ag&rdquo; the silversearcher</h3>
 
 <p>Pour le premier je ne me mouille pas trop, voici <code>ag</code>.</p>
 
@@ -96,7 +98,7 @@ mysupersecretapp/secrets
 C&rsquo;est un peu plus lent mais suffisant dans la majorité des cas</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep -nri password
 mysupersecretapp/secrets:12:ADMIN_PASSWORD<span style="color:#f92672">=</span>guest</code></pre></div>
-<h3 id="2-fd-50-shorter-than-find">#2 &ldquo;fd&rdquo; 50% shorter than find</h3>
+<h3 id="2-fd-50-shorter-than-find">2. &ldquo;fd&rdquo; 50% shorter than find</h3>
 
 <p>Une alternative pour &ldquo;brainless&rdquo; de find.
 <code>fd</code> permet tout simplement de trouver un fichier dans un système de fichier.</p>
@@ -112,10 +114,12 @@ mysupersecretapp/secrets:12:ADMIN_PASSWORD<span style="color:#f92672">=</span>gu
 
 <p>La version find:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find /home/username/ -name <span style="color:#e6db74">&#34;sex.*&#34;</span></code></pre></div>
-<h3 id="3-fzf-the-fuzzy-finder">#3 &ldquo;fzf&rdquo; The fuzzy finder</h3>
+<h3 id="3-fzf-the-fuzzy-finder">3. &ldquo;fzf&rdquo; The fuzzy finder</h3>
 
 <p>Difficile à décrire. En gros on pipe une liste de ligne au binaire et il affiche une interface permettant de choisir dans cette liste.
 La grosse plus-value se trouve dans l&rsquo;ordre d&rsquo;affichage qui se met à jour à chaque saisie et trie par pertinence en ordre décroissant.</p>
+
+<p><a href="https://github.com/junegunn/fzf">code source</a></p>
 
 <p>
     <img src="/img/screenshot/fzf_history.png"  alt="fzf history"  class="left"  style="width: 50em;"  />
@@ -170,8 +174,6 @@ chmod +x ~/.local/bin/gitignore</code></pre></div>
     <img src="/img/screenshot/fzf_gitignore.png"  alt="gitignore fzf"  class="left"  style="width: 50em;"  />
 
 
-
-<p><a href="https://github.com/junegunn/fzf">code source</a></p>
 
 <hr />
 
