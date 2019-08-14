@@ -42,7 +42,7 @@ disableHugoGeneratorInject = false
   description = "Homepage and blog by dauliac"
   keywords = "homepage, blog, science, informatics, development, programming, cloud, cicd, docker, francais"
   images = [""]
-  homeSubtitle = "by dauliac"
+  homeSubtitle = "by dauliac devops, "
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
@@ -52,7 +52,9 @@ disableHugoGeneratorInject = false
   [[params.social]]
     name = "email"
     url  = "mailto:dauliac@protonmail.com"
-
+  [[params.social]]
+    name = "codepen"
+    url  = "https://codepen.io/Dauliac"
   [[params.social]]
     name = "github"
     url  = "https://github.com/dauliac"
