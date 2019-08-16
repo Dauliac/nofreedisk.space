@@ -7,13 +7,13 @@ draft: false
 
 Yop,
 Moi c'est [@dauliac](github.com/daliac) j'ai 21 ans et suis passionné d'informatique.
-J'étudie en master informatique à Bordeaux et travaille à [`@DMIC`](https://www.linkedin.com/company/ubiwan-dmic/)
+J'étudie en master informatique à Bordeaux et travaille à [`@DMIC`](https://www.linkedin.com/company/ubiwan-dmic/).
 
-Mes centres d'intérêts professionnel se portent sur le cloud et le système, mais je pratique le développement à mes heures perdues ([`python`](https://fr.wikipedia.org/wiki/Python), [`golang`](https://fr.wikipedia.org/wiki/Go_(langage)).
+Mes centres d'intérêts professionnel se portent sur le cloud et le système, mais je pratique le développement à mes heures perdues ( [`python`](https://fr.wikipedia.org/wiki/Python), [`golang`](https://fr.wikipedia.org/wiki/Go_(langage)).
 
-Sur mon temps libre je lis de la philosophie, m'intéresser au cinéma ou lis des revues scientifiques.
+J'aime le cinéma, les sciences et la culture en général.
 
-[Devops](https://fr.wikipedia.org/wiki/Devops) et [libriste](https://fr.wikipedia.org/wiki/Culture_libre) dans l'âme j'essaie de me faire évangéliste et de partager "les bonnes pratique".
+[Devops](https://fr.wikipedia.org/wiki/Devops) et [libriste](https://fr.wikipedia.org/wiki/Culture_libre) dans l'âme, j'essaie de me faire évangéliste des bonnes pratiques et de partager mon savoir.
 
 ## Voici une suite d'images/liens que je voudrais mettre en avant:
 

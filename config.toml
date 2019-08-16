@@ -42,7 +42,7 @@ disableHugoGeneratorInject = false
   description = "Homepage and blog by dauliac"
   keywords = "homepage, blog, science, informatics, development, programming, cloud, cicd, docker, francais"
   images = [""]
-  homeSubtitle = "par dauliac: junions, devops et admin-sys"
+  homeSubtitle = "par dauliac: junior, devops et admin-sys."
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
